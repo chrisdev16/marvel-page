@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
@@ -11,7 +10,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import {pages} from '../enums';
 import {Link} from "react-router-dom";
-import marvel_logo from "../Assets/Marvel-Comics-Logo.png"
+import marvel_logo from "../Assets/Marvel-Home-Logo.png"
 
 const NavigationBar = () => {
 
@@ -29,9 +28,11 @@ const NavigationBar = () => {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img src={marvel_logo} alt={"marvel logo"} height={'100px'} style={{margin: '5px 20px'}} />
+                        <Link to={"/"}>
+                            <img src={marvel_logo} alt={"marvel logo"} height={'70px'}  style={{margin: '5px 20px'}} />
+                        </Link>
 
-                    <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}, }}>
+                    <Box sx={{flexGrow: 1, display: {s: 'flex', md: 'none'}, }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -57,12 +58,13 @@ const NavigationBar = () => {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: {xs: 'block', md: 'none'},
+                                display: {s: 'block', md: 'none'},
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page.label}</Typography>
+                                <MenuItem key={page.label} onClick={handleCloseNavMenu} component={Link} to={page.path}>
+                                    <span style={{padding: '0 2px'}}>{page.icon}</span>
+                                    <span >{page.label}</span>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -79,7 +81,7 @@ const NavigationBar = () => {
 
                             >
                                 <Box style={{marginTop: '20px'}} display={'flex'} textAlign={'center'} >
-                                    <span style={{padding: '0 5px'}}>{page.icon}</span>
+                                    <span style={{padding: '0 2px'}}>{page.icon}</span>
                                     <span >{page.label}</span>
                                 </Box>
                             </Button>
