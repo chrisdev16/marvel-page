@@ -8,9 +8,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import {pages} from '../enums';
+import {pages} from '../../Services/enums';
 import {Link} from "react-router-dom";
-import marvel_logo from "../Assets/Marvel-Home-Logo.png"
+import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png"
 
 const NavigationBar = () => {
 

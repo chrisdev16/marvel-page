@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DefaultLayout from "./Components/DefaultLayout";
-import Home from "./Pages/Home";
-import Search from "./Pages/Search";
-import Creators from "./Pages/Creators";
-import Comics from "./Pages/Comics";
-import Characters from "./Pages/Characters";
+import DefaultLayout from "./Layouts/Main/DefaultLayout";
+import Home from "./Pages/Home/Home";
+import Search from "./Pages/Search/Search";
+import Creators from "./Pages/Creators/Comics";
+import Comics from "./Pages/Comics/Comics";
+import Characters from "./Pages/Characters/Characters";
 import {ThemeProvider} from "@mui/material";
-import theme from "./theme";
+import theme from "./Assets/Styles/theme";
 
 
 function App() {

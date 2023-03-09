@@ -1,4 +1,4 @@
-const Creators = () => {
+const Comics = () => {
   return (
       <div>
           <h1>
@@ -8,4 +8,4 @@ const Creators = () => {
   )
 }
 
-export  default Creators;
+export  default Comics;
