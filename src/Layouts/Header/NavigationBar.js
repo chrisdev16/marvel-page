@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import {pages} from '../../Services/enums';
+import {navigationItems} from '../../Services/enums';
 import {Link} from "react-router-dom";
 import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png"
 
@@ -61,7 +61,7 @@ const NavigationBar = () => {
                                 display: {s: 'block', md: 'none'},
                             }}
                         >
-                            {pages.map((page) => (
+                            {navigationItems.map((page) => (
                                 <MenuItem key={page.label} onClick={handleCloseNavMenu} component={Link} to={page.path}>
                                     <span style={{padding: '0 2px'}}>{page.icon}</span>
                                     <span >{page.label}</span>
@@ -71,7 +71,7 @@ const NavigationBar = () => {
                     </Box>
 
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-                        {pages.map((page) => (
+                        {navigationItems.map((page) => (
                             <Button
                                 key={page.label}
                                 onClick={handleCloseNavMenu}
