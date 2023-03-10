@@ -4,8 +4,17 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import MarvelCharacterLogo from '../../Assets/Images/marvelheroes.jpg'
+import {useMemo} from "react";
 
-export default function ActionAreaCard({name, image}) {
+export default function CharacterCard({name, image, id}) {
+
+    const characterImage = useMemo(() => {
+        const marvelImage = JSON.stringify(image);
+        if (marvelImage.includes("image_not_available"))
+            return  MarvelCharacterLogo
+        else return image;
+    }, [image])
 
     return (
         <Card sx={{ borderRadius: "20px", maxWidth: "250px", minWidth: "200px", maxHeight: "500px"}}>
@@ -13,7 +22,7 @@ export default function ActionAreaCard({name, image}) {
                 <CardMedia
                     component="img"
                     height="200px"
-                    image={image}
+                    image={characterImage}
                     alt="marvel character image"
                 />
                 <hr

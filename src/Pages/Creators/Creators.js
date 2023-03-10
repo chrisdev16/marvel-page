@@ -1,8 +1,8 @@
-import { Container, Box, CssBaseline } from "@mui/material";
+import { Box, Container, CssBaseline } from "@mui/material";
 import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png";
 import ConstructionIcon from "@mui/icons-material/Construction";
 
-const Home = () => {
+const Creators = () => {
   return (
     <>
       <CssBaseline />
@@ -38,4 +38,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Creators;

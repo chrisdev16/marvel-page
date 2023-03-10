@@ -1,6 +1,6 @@
-import {Alert, Box, CircularProgress, Container, CssBaseline, Grid, Stack} from "@mui/material";
+import {Alert, Box, CircularProgress, Container, CssBaseline, Grid, Pagination, Stack} from "@mui/material";
 import characters_background from "../../Assets/Images/characters_bg.jpg";
-import {useEffect, useState} from 'react';
+import { useEffect, useState} from 'react';
 import {BASE_ENDPOINT_URL, MY_AUTH} from "../../Services/Utils";
 import axios from "axios";
 import CharacterCard from "../../Components/Characters/CharacterCard"
@@ -10,23 +10,29 @@ const Characters = () => {
     const [characters, setCharacters] = useState([]);
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
+    const [offset, setOffset] = useState(0);
+    const [pageCount, setPageCount] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        const URL = `${BASE_ENDPOINT_URL}/v1/public/characters${MY_AUTH}`;
+        const URL = `${BASE_ENDPOINT_URL}/v1/public/characters${MY_AUTH}&offset=${offset}`;
         setIsLoading(true);
         axios
             .get(URL)
             .then((response) => {
-                setCharacters(response.data.data.results);
+                const res = response.data.data;
+                setCharacters (res.results);
+                setOffset(res.offset + res.count);
+                setPageCount(Math.ceil(res.total / res.count))
                 setIsLoading(false);
+                console.log(res.results)
             })
             .catch((e) => {
                 setError(true);
                 setIsLoading(false);
                 console.log(e);
             })
-    }, [])
+    }, [currentPage])
 
     if (isLoading) {
         return (
@@ -44,6 +50,12 @@ const Characters = () => {
             </div>
         )
     }
+
+    const handleChange = (e, value) => {
+        setCurrentPage(value);
+        setOffset((value - 1) * 20);
+        console.log("currentPage pushed: " + currentPage)
+    };
 
     return (
         <>
@@ -71,7 +83,6 @@ const Characters = () => {
             </Container>
 
             <Container maxWidth={false} disableGutters sx={{
-                backgroundColor: "#ef233c",
                 minHeight: "500px",
                 display: 'flex',
                 alignItems: "center",
@@ -94,6 +105,7 @@ const Characters = () => {
                                         image={
                                             `${character.thumbnail.path}.${character.thumbnail.extension}`
                                         }
+                                        id={character.id}
                                     />
                                 </Grid>
                             )
@@ -101,6 +113,22 @@ const Characters = () => {
                     </Grid>
                 )}
             </Container>
+            <Box
+                mt={5}
+                mb={5}
+                display={"flex"}
+                alignContent={"center"}
+                alignItems={"center"}
+                justifyContent={"center"}
+            >
+                <Pagination
+                    variant="outlined"
+                    count={pageCount}
+                    onChange={handleChange}
+                    page={currentPage}
+                />
+            </Box>
+
         </>
     )
 }
