@@ -1,6 +1,7 @@
 import { Container, Box, CssBaseline } from "@mui/material";
 import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png";
 import ConstructionIcon from "@mui/icons-material/Construction";
+import bgImage from "../../Assets/Images/vertical_marvel_bg_image_2.jpg";
 
 const Home = () => {
   return (
@@ -13,9 +14,11 @@ const Home = () => {
           minHeight: "1000px",
           margin: "0px",
           display: "flex",
-          backgroundColor: "#ED1B24",
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
           alignItems: "center",
           justifyContent: "center",
+          opacity: 0.7,
         }}
       >
         <span>
