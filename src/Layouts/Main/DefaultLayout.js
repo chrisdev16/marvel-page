@@ -1,13 +1,15 @@
 import NavigationBar from "../Header/NavigationBar";
-import {Container} from "@mui/material";
+import { Container } from "@mui/material";
 
 const DefaultLayout = (props) => {
   return (
-      <>
+    <>
+      <Container maxWidth={false} disableGutters>
         <NavigationBar />
-        <Container maxWidth={false} disableGutters >{props.children}</Container>
-      </>
-  )
-}
+        {props.children}
+      </Container>
+    </>
+  );
+};
 
-export  default DefaultLayout;
+export default DefaultLayout;
