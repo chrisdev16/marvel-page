@@ -33,7 +33,6 @@ const Characters = () => {
         setOffset(res.offset + res.count);
         setPageCount(Math.ceil(res.total / res.count));
         setIsLoading(false);
-        console.log(res.results);
       })
       .catch((e) => {
         setError(true);
@@ -78,6 +77,7 @@ const Characters = () => {
           justifyContent: "center",
           backgroundImage: `url(${characters_background})`,
           backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           minHeight: "350px",
         }}
       >

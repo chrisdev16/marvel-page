@@ -23,7 +23,7 @@ const Motion = () => {
         width: { xs: "50px", md: "150px" },
         height: { xs: "50px", md: "150px" },
         display: "flex",
-        justifyContent: { xs: "end", md: "none" },
+        justifyContent: { xs: "end", md: "center" },
         marginRight: { xs: "4px", md: "none" },
         //background: "rgba(255, 255, 255, 0.2)",
         overflow: "hidden",

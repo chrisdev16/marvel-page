@@ -2,6 +2,7 @@ import { Box, Container, CssBaseline, Grid } from "@mui/material";
 import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import characters_background from "../../Assets/Images/horizontal_marvel_bg_image.jpg";
+import bgImage from "../../Assets/Images/vertical_marvel_bg_image_2.jpg";
 
 const Comics = () => {
   return (
@@ -16,9 +17,8 @@ const Comics = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: { xs: "#ef233c", s: "none" },
             backgroundImage: {
-              xs: "none",
+              xs: `url(${bgImage})`,
               md: `url(${characters_background})`,
             },
             backgroundSize: "cover",
@@ -34,7 +34,7 @@ const Comics = () => {
               alignItems: "center",
               justifyContent: "start",
               alignContent: "center",
-              backgroundColor: { xs: "none", s: "rgba(0, 0, 0, 0.6)" },
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
             }}
           >
             <span>

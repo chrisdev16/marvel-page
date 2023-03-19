@@ -2,7 +2,7 @@ import { Container, Box, CssBaseline, Grid } from "@mui/material";
 import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import bgImage from "../../Assets/Images/vertical_marvel_bg_image_2.jpg";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 //import { useState } from "react";
 import Motion from "../../Components/Logo/Motion";
 
@@ -38,15 +38,16 @@ const Home = () => {
             backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
-          <Grid item sx={{ display: { xs: "none", medium: "flex" } }}>
+          <Grid item sx={{ display: { xs: "none", md: "flex" } }}>
             <Motion />
           </Grid>
           <Grid
             item
-            display={{ xs: "none", md: "flex" }}
-            component={motion.div}
-            animate={{ x: 100, scale: 1 }}
-            initial={{ scale: 0 }}
+            sx={{
+              display: "flex",
+              alignContent: { xs: "start", md: "center" },
+              justifyContent: { xs: "start", md: "center" },
+            }}
           >
             <span>
               <Box>
@@ -54,7 +55,7 @@ const Home = () => {
               </Box>
               <Box
                 sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                  backgroundColor: "rgba(255, 255, 255, 0.6)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

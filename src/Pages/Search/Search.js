@@ -32,7 +32,7 @@ const Search = () => {
               alignItems: "center",
               justifyContent: "start",
               alignContent: "center",
-              backgroundColor: "rgba(0, 0, 0, 0.4)",
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
             }}
           >
             <Grid
@@ -47,6 +47,7 @@ const Search = () => {
               <TextField
                 id="outlined-basic"
                 variant="outlined"
+                disabled
                 autoFocus
                 placeholder={"Κάντε μία αναζήτηση..."}
                 fullWidth
