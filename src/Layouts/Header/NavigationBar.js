@@ -98,7 +98,9 @@ const NavigationBar = () => {
                 paddingBottom: "5px",
               }}
             >
-              <Typography fontSize={"18px"}>ARVEL</Typography>
+              <Typography fontWeight={"bold"} fontSize={"18px"}>
+                ARVEL
+              </Typography>
             </Box>
           </Box>
 
