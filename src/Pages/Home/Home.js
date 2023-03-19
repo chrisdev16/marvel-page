@@ -43,6 +43,7 @@ const Home = () => {
           </Grid>
           <Grid
             item
+            display={{ xs: "none", md: "flex" }}
             component={motion.div}
             animate={{ x: 100, scale: 1 }}
             initial={{ scale: 0 }}
