@@ -39,20 +39,11 @@ const NavigationBar = () => {
               />
             </Link>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <Motion />
-            <Box
-              sx={{
-                display: { xs: "grid", md: "none" },
-                alignContent: "end",
-                paddingBottom: "5px",
-              }}
-            >
-              <Typography fontSize={"18px"}>ARVEL</Typography>
-            </Box>
-          </Box>
-
-          <Box sx={{ flexGrow: 1, display: { s: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              display: { s: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -93,6 +84,22 @@ const NavigationBar = () => {
                 </MenuItem>
               ))}
             </Menu>
+          </Box>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            <Motion />
+            <Box
+              sx={{
+                display: { xs: "grid", md: "none" },
+                alignContent: "end",
+                paddingBottom: "5px",
+              }}
+            >
+              <Typography fontSize={"18px"}>ARVEL</Typography>
+            </Box>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
