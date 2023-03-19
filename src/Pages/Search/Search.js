@@ -1,5 +1,6 @@
-import { Button, Container, CssBaseline, Grid, TextField } from "@mui/material";
+import { Container, CssBaseline, Grid, TextField } from "@mui/material";
 import characters_background from "../../Assets/Images/54702.jpg";
+import bgImage from "../../Assets/Images/vertical_marvel_bg_image_2.jpg";
 
 const Search = () => {
   return (
@@ -14,7 +15,10 @@ const Search = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundImage: `url(${characters_background})`,
+            backgroundImage: {
+              xs: `url(${bgImage})`,
+              md: `url(${characters_background})`,
+            },
             backgroundSize: "cover",
           }}
         >
@@ -43,12 +47,11 @@ const Search = () => {
               <TextField
                 id="outlined-basic"
                 variant="outlined"
+                autoFocus
                 placeholder={"Κάντε μία αναζήτηση..."}
                 fullWidth
                 sx={{ borderRadius: "20%" }}
-              >
-                <Button variant="contained">Αναζήτηση</Button>
-              </TextField>
+              ></TextField>
             </Grid>
           </Grid>
         </Container>

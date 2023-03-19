@@ -19,7 +19,7 @@ export default function CharacterCard({ name, image }) {
       sx={{
         borderRadius: "20px",
         maxWidth: "300px",
-        minWidth: "200px",
+        minWidth: "160px",
         maxHeight: "600px",
       }}
     >
@@ -27,7 +27,7 @@ export default function CharacterCard({ name, image }) {
         <CardMedia
           component="img"
           height="200px"
-          image={characterImage}
+          image={String(characterImage)}
           alt="marvel character image"
         />
         <hr style={{ margin: "0px", backgroundColor: "#fff", height: 5 }} />
@@ -42,9 +42,8 @@ export default function CharacterCard({ name, image }) {
         >
           <Typography
             gutterBottom
-            variant="h6"
             component="div"
-            sx={{ color: "#fff" }}
+            sx={{ color: "#fff", fontSize: { xs: "h6", md: "h1" } }}
           >
             {name}
           </Typography>
