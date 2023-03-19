@@ -12,6 +12,7 @@ import { navigationItems } from "../../Services/enums";
 import { Link } from "react-router-dom";
 import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png";
 import Motion from "../../Components/Logo/Motion";
+import { Typography } from "@mui/material";
 
 const NavigationBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,6 +41,15 @@ const NavigationBar = () => {
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <Motion />
+            <Box
+              sx={{
+                display: { xs: "grid", md: "none" },
+                alignContent: "end",
+                paddingBottom: "5px",
+              }}
+            >
+              <Typography fontSize={"18px"}>ARVEL</Typography>
+            </Box>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { s: "flex", md: "none" } }}>

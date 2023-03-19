@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import { motion } from "framer-motion";
+import * as React from "react";
 
 const icon = {
   hidden: {
@@ -22,6 +23,8 @@ const Motion = () => {
         width: { xs: "50px", md: "150px" },
         height: { xs: "50px", md: "150px" },
         display: "flex",
+        justifyContent: { xs: "end", md: "none" },
+        marginRight: { xs: "4px", md: "none" },
         //background: "rgba(255, 255, 255, 0.2)",
         overflow: "hidden",
         placeContent: "center",
