@@ -121,17 +121,17 @@ const Characters = () => {
             </Alert>
           </Stack>
         ) : (
-          <Grid container spacing={5} m={2} direction={"row"}>
+          <Grid container spacing={1} m={1} direction={"row"}>
             {characters.map((character) => {
               return (
                 <Grid
                   item
                   key={character.id}
-                  xs={8}
+                  xs={6}
                   sm={6}
                   md={4}
                   lg={3}
-                  xl={3}
+                  xl={2}
                 >
                   <CharacterCard
                     name={character.name}

@@ -1,4 +1,4 @@
-import { Container, CssBaseline, Grid, TextField } from "@mui/material";
+import { Button, Container, CssBaseline, Grid, TextField } from "@mui/material";
 import characters_background from "../../Assets/Images/54702.jpg";
 
 const Search = () => {
@@ -37,15 +37,18 @@ const Search = () => {
               sx={{
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 marginTop: "3vh",
+                borderRadius: "30px",
               }}
             >
               <TextField
                 id="outlined-basic"
-                label="Search..."
                 variant="outlined"
+                placeholder={"Κάντε μία αναζήτηση..."}
                 fullWidth
                 sx={{ borderRadius: "20%" }}
-              />
+              >
+                <Button variant="contained">Αναζήτηση</Button>
+              </TextField>
             </Grid>
           </Grid>
         </Container>

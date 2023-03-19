@@ -16,7 +16,11 @@ const Comics = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundImage: `url(${characters_background})`,
+            backgroundColor: { xs: "#ef233c", s: "none" },
+            backgroundImage: {
+              xs: "none",
+              md: `url(${characters_background})`,
+            },
             backgroundSize: "cover",
           }}
         >
@@ -30,7 +34,7 @@ const Comics = () => {
               alignItems: "center",
               justifyContent: "start",
               alignContent: "center",
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              backgroundColor: { xs: "none", s: "rgba(0, 0, 0, 0.6)" },
             }}
           >
             <span>
