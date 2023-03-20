@@ -6,9 +6,9 @@ const DefaultLayout = (props) => {
   return (
     <>
       <Container maxWidth={false} disableGutters>
-        <Header />
+        <Header top />
         {props.children}
-        <Footer />
+        <Footer bottom />
       </Container>
     </>
   );

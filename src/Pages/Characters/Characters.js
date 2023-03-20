@@ -42,23 +42,6 @@ const Characters = () => {
     // eslint-disable-next-line
   }, [currentPage]);
 
-  if (isLoading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          alignItems: "center",
-          alignContent: "center",
-          justifyContent: "center",
-          height: "50vh",
-        }}
-      >
-        <CircularProgress />
-      </div>
-    );
-  }
-
   const handleChange = (e, value) => {
     setCurrentPage(value);
     setOffset((value - 1) * 20);
@@ -105,60 +88,77 @@ const Characters = () => {
         </span>
       </Container>
 
-      <Container
-        maxWidth={false}
-        sx={{
-          minHeight: "500px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {error ? (
-          <Stack sx={{ width: "100%", mt: "5vh" }} spacing={2}>
-            <Alert variant="outlined" severity="error">
-              There was an error with getting Marvel Characters
-            </Alert>
-          </Stack>
-        ) : (
-          <Grid container spacing={1} m={1} direction={"row"}>
-            {characters.map((character) => {
-              return (
-                <Grid
-                  item
-                  key={character.id}
-                  xs={6}
-                  sm={6}
-                  md={4}
-                  lg={3}
-                  xl={2}
-                >
-                  <CharacterCard
-                    name={character.name}
-                    image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                    id={character.id}
-                  />
-                </Grid>
-              );
-            })}
-          </Grid>
-        )}
-      </Container>
-      <Box
-        mt={5}
-        mb={5}
-        display={"flex"}
-        alignContent={"center"}
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
-        <Pagination
-          variant="outlined"
-          count={pageCount}
-          onChange={handleChange}
-          page={currentPage}
-        />
-      </Box>
+      {isLoading ? (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            alignItems: "center",
+            alignContent: "end",
+            justifyContent: "center",
+            height: "50vh",
+          }}
+        >
+          <CircularProgress />
+        </div>
+      ) : (
+        <Box
+          sx={{
+            minHeight: "500px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          {error ? (
+            <Stack sx={{ width: "100%", mt: "5vh" }} spacing={2}>
+              <Alert variant="outlined" severity="error">
+                There was an error with getting Marvel Characters
+              </Alert>
+            </Stack>
+          ) : (
+            <>
+              <Grid container spacing={1} m={1} direction={"row"}>
+                {characters.map((character) => {
+                  return (
+                    <Grid
+                      item
+                      key={character.id}
+                      xs={6}
+                      sm={6}
+                      md={4}
+                      lg={3}
+                      xl={2}
+                    >
+                      <CharacterCard
+                        name={character.name}
+                        image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                        id={character.id}
+                      />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+              <Box
+                mt={5}
+                mb={5}
+                display={"flex"}
+                alignContent={"center"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Pagination
+                  variant="outlined"
+                  count={pageCount}
+                  onChange={handleChange}
+                  page={currentPage}
+                />
+              </Box>
+            </>
+          )}
+        </Box>
+      )}
     </>
   );
 };

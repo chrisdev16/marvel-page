@@ -20,8 +20,8 @@ const Motion = () => {
       component={motion.div}
       sx={{
         // borderRadius: "30px",
-        width: { xs: "50px", md: "150px" },
-        height: { xs: "50px", md: "150px" },
+        width: { xs: "60px", md: "150px" },
+        height: { xs: "60px", md: "150px" },
         display: "flex",
         justifyContent: { xs: "end", md: "center" },
         marginRight: { xs: "4px", md: "none" },
