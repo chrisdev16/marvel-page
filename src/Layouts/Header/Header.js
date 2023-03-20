@@ -1,20 +1,23 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { navigationItems } from "../../Services/enums";
 import { Link } from "react-router-dom";
+import AppBar from "@mui/material/AppBar";
+import {
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
 import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png";
+import { navigationItems } from "../../Services/enums";
 import Motion from "../../Components/Logo/Motion";
-import { Typography } from "@mui/material";
 
-const NavigationBar = () => {
+const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -104,6 +107,18 @@ const NavigationBar = () => {
             </Box>
           </Box>
 
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "end",
+            }}
+          >
+            <Link to={"/search"} style={{ color: "#FFF" }}>
+              <SearchIcon fontSize={"large"} />
+            </Link>
+          </Box>
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {navigationItems.map((page) => (
               <Button
@@ -130,4 +145,4 @@ const NavigationBar = () => {
   );
 };
 
-export default NavigationBar;
+export default Header;

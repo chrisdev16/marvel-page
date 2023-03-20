@@ -9,6 +9,13 @@ const myTheme = createTheme({
         },
       },
     },
+    Footer: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#151515",
+        },
+      },
+    },
   },
 });
 

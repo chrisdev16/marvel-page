@@ -1,14 +1,9 @@
-import { Container, Box, CssBaseline, Grid } from "@mui/material";
-import marvel_logo from "../../Assets/Images/Marvel-Home-Logo.png";
-import ConstructionIcon from "@mui/icons-material/Construction";
+import { Container, CssBaseline, Grid } from "@mui/material";
 import bgImage from "../../Assets/Images/vertical_marvel_bg_image_2.jpg";
-//import { motion } from "framer-motion";
-//import { useState } from "react";
 import Motion from "../../Components/Logo/Motion";
+import LogoConstruction from "../../Components/Logo/LogoConstruction";
 
 const Home = () => {
-  //const [rotate, setRotate] = useState(false);
-
   return (
     <>
       <CssBaseline />
@@ -41,30 +36,8 @@ const Home = () => {
           <Grid item sx={{ display: { xs: "none", md: "flex" } }}>
             <Motion />
           </Grid>
-          <Grid
-            item
-            sx={{
-              display: "flex",
-              alignContent: { xs: "start", md: "center" },
-              justifyContent: { xs: "start", md: "center" },
-            }}
-          >
-            <span>
-              <Box>
-                <img src={marvel_logo} alt={"marvel logo"} />
-              </Box>
-              <Box
-                sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.6)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <ConstructionIcon fontSize={"large"} />
-                <h3 style={{ color: "#000" }}>Site is under Construction</h3>
-              </Box>
-            </span>
+          <Grid item>
+            <LogoConstruction />
           </Grid>
         </Grid>
       </Container>
