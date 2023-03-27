@@ -5,11 +5,11 @@ import * as React from "react";
 const icon = {
   hidden: {
     pathLength: 0,
-    fill: "rgba(255, 255, 255, 0)",
+    fill: "rgba(237, 27, 36, 0)",
   },
   visible: {
     pathLength: 1,
-    fill: "rgba(237, 27, 36, 1)",
+    fill: "rgba(255, 255, 255, 1)",
   },
 };
 
@@ -20,23 +20,23 @@ const Motion = () => {
       component={motion.div}
       sx={{
         // borderRadius: "30px",
-        width: { xs: "60px", md: "150px" },
-        height: { xs: "60px", md: "150px" },
+        width: { xs: "50px", md: "100px" },
+        height: { xs: "50px", md: "100px" },
         display: "flex",
-        justifyContent: { xs: "end", md: "center" },
+        justifyContent: { xs: "center", md: "center" },
         marginRight: { xs: "4px", md: "none" },
-        //background: "rgba(255, 255, 255, 0.2)",
         overflow: "hidden",
         placeContent: "center",
+        backgroundColor: "#ED1B24",
       }}
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
         style={{
-          width: "56%",
+          width: "70%",
           overflow: "visible",
-          stroke: "#ef233c",
+          stroke: "#fff",
           strokeWidth: 5,
           strokeLinejoin: "round",
           strokeLinecap: "round",

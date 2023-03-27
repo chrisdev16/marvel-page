@@ -98,10 +98,9 @@ const Header = () => {
               sx={{
                 display: { xs: "grid", md: "none" },
                 alignContent: "end",
-                paddingBottom: "5px",
               }}
             >
-              <Typography fontWeight={"bold"} fontSize={"18px"}>
+              <Typography fontWeight={"bold"} fontSize={"20px"}>
                 ARVEL
               </Typography>
             </Box>

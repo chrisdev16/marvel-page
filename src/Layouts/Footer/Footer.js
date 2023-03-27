@@ -1,6 +1,6 @@
 import { Container, Box } from "@mui/material";
 import Motion from "../../Components/Logo/Motion";
-import Copyright from "../../Components/Copyright";
+import Copyright from "../../Components/Footer/Copyright";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
       <Box
         sx={{
           display: { xs: "flex", md: "none" },
-          height: "20vh",
+
           alignContent: "center",
           justifyContent: "center",
           alignItems: "center",
@@ -23,14 +23,27 @@ const Footer = () => {
             alignContent: "center",
             justifyContent: "center",
             alignItems: "center",
+            height: "10vh",
           }}
         >
           <Motion />
         </Box>
       </Box>
-      <Box sx={{ display: { xs: "none", md: "flex" } }}>
-        <Motion />
-        <Copyright />
+      <Box
+        sx={{
+          display: { xs: "none", md: "flex" },
+          justifyContent: "start",
+          height: "15vh",
+          alignItems: "center",
+          alignContent: "center",
+        }}
+      >
+        <Box>
+          <Motion />
+        </Box>
+        <Box sx={{ marginLeft: "15px" }}>
+          <Copyright />
+        </Box>
       </Box>
     </Container>
   );
