@@ -18,9 +18,9 @@ export default function CharacterCard({ name, image }) {
     <Card
       sx={{
         borderRadius: "20px",
-        maxWidth: "300px",
+        maxWidth: "200px",
         minWidth: "160px",
-        maxHeight: "600px",
+        maxHeight: "300px",
       }}
     >
       <CardActionArea>
